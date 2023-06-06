@@ -1,0 +1,22 @@
+---
+const { href, title, body,img } = Astro.props;
+---
+
+
+
+<div  class=" select-none h-fit max-w-sm rounded-lg mr-[1rem] mb-5 ">
+    <div class="p-2">
+        <div style="font-family:Satoshi;" class="flex justify-center mt-[33rem] pb-16 lg:mt-[45rem] xl:mt-[48rem]">
+            <div class="transition max-w-sm overflow-hidden shadow-lg rounded-lg hover:shadow-xl">
+               <a href={href}><img class="w-full" src={img} alt="Sunset in the mountains"></a>
+                <div class="px-6 py-4">
+                  <a href={href}><div class="font-bold text-xl mb-2">{title}</div></a>
+                  <a href={href}><p class="hidden text-gray-700 text-base xl:block lg:block md:block">
+                    {body}
+                  </p></a>
+                </div>
+              </div>
+        </div>
+    </div>
+
+</div>

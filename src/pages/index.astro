@@ -1,0 +1,241 @@
+---
+import Layout from "../Layouts/layout.astro";
+import Card from "../components/card.astro";
+---
+
+
+<Layout title="CognetZap" >
+		<!-- Loading Screen -->
+	<div id="loaderWrapper" class="flex w-screen h-screen items-center justify-center bg-[#292220]  z-50">
+		<h1 id="percentage" class="flex justify-center mt-1/2 text-[#1F1A19] w-screen h-1/2 absolute z-20">0%</h1>
+		<h1 id="loader-progress" class="none"></h1>
+		<div id="blobWrapper" class="flex justify-center w-1/2 h-3/4 absolute z-1">
+			<svg id="blob" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 350">
+				<path d="M156.4,339.5c31.8-2.5,59.4-26.8,80.2-48.5c28.3-29.5,40.5-47,56.1-85.1c14-34.3,20.7-75.6,2.3-111  c-18.1-34.8-55.7-58-90.4-72.3c-11.7-4.8-24.1-8.8-36.8-11.5l-0.9-0.9l-0.6,0.6c-27.7-5.8-56.6-6-82.4,3c-38.8,13.6-64,48.8-66.8,90.3c-3,43.9,17.8,88.3,33.7,128.8c5.3,13.5,10.4,27.1,14.9,40.9C77.5,309.9,111,343,156.4,339.5z"/>
+				</svg>
+		</div>
+
+		<span id="loader" class=" w-full text-[#292220] z-10">
+			<h1 class="flex justify-center text-4xl lg:text-6xl xl:text-8xl">COGNET <a class="text-yellow-200">ZAP</a></h1><br>
+			<p class="flex justify-center text-slate-300" id="date">DATE</p>
+			<div class="flex justify-center text-white pt-5 z-20">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+					<path transform="rotate(180,12,12)" style="fill:white;" d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/>
+					</svg>‎‎‎‎‎‎ ‎ <p id="fillerText"> "BLAH BLAH BLAH BLAH"</p>
+			</div>
+			<footer class="w-full h-16 border-white
+            fixed left-0 bottom-0
+            flex justify-center items-center
+            text-white text-2xl
+            ">
+			<h1 class="flex justify-center">Created By ‎<a class="text-yellow-100">FlyNightSky</a></h1><a href="https://github.com/FlyNightSky"><img src="/github.svg" width="40" class="p-2"></a>
+        </footer> 
+		</span>
+	</div>
+
+
+	<!-- Main Screen -->
+	<main id="main" class="top-0 left-0	h-full w-full h-full absolute bg-[#292220] text-[#e3ddd8]">
+		<nav class="flex w-screen ">
+			<!-- Hamburger Menu -->
+			<div onclick="const menu = document.getElementById('menu-wrapper');menu.style.display='block';" class="flex block pr-4 mt-4 absolute w-screen z-20 justify-end lg:hidden xl:hidden">
+				<div class="space-y-2">
+					<div class="w-8 h-0.5 bg-white"></div>
+					<div class="w-8 h-0.5 bg-white"></div>
+					<div class="w-8 h-0.5 bg-white"></div>
+				  </div>
+			</div>
+			<!-- Hamburger Menu Inside -->
+			<div id="menu-wrapper" class="h-screen w-screen bg-[#292220] absolute z-50">
+				<div id="title" class="flex p-2 text-2xl absolute font-black justify-start pt-3">
+					<a >Cognet</a><a class="text-yellow-100">ZAP</a><a class="text-3xl">.</a>
+				</div>
+				<div class="flex justify-end w-screen pt-3 fill-red-200 ">
+					<button onclick="const m = document.getElementById('menu-wrapper');m.style.display='none';"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"  style="color:#ffcccb;" class="w-8 h-8 mr-[1rem]" >
+						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+					</svg></button>
+				</div>
+			<div class="mt-36">
+				<a href="/"class="flex justify-center text-white w-screen p-4 bg-[#221B1B] " id="items">Home</a>
+				<a href="/about" class="flex justify-center text-white w-screen p-4 " id="items">About</a>\
+				<a href="/credit" class="flex justify-center text-white w-screen p-4 " id="items">About</a>
+				<a href="/Zap" class="flex justify-center text-white w-screen p-4 bg-[#221B1B]" id="items">Zap</a>
+			</div>
+				  
+			</div>
+			<!-- Bigger Screens -->
+			<div id="title" class="z-20 hover:cursor-pointer flex p-2 text-2xl fixed backdrop-blur-sm absolute font-black justify-start pt-3">
+				<a href="/" class="z-20">Cognet</a><a href="/" class="text-yellow-100">ZAP</a><a href="/" class="text-3xl">.</a>
+			</div>
+			
+			<div class="hidden absolute z-20 lg:flex xl:flex lg:block xl:block font-thin w-screen items-center justify-center">
+			<a href="/"class="flex justify-center p-4 hover:text-red-200" id="items">Home</a>
+			<a href="/about" class="flex justify-center p-4 hover:text-red-200" id="items">About</a>
+			<a href="/credit" class="flex justify-center p-4 hover:text-red-200" id="items">Credit</a>
+			<a href="/Zap" class="flex justify-center p-4 hover:text-yellow-200" id="items">Zap</a>
+		</div>
+		<!--All Screens Get Started -> -->
+		<div id="get-started" class="z-20 flex justify-end w-screen mt-2 mr-16 lg:mr-4 xl:mr-5">
+		<div class="bg-none transition-all absolute text-white rounded-full border border-white p-2 hover:px-5">
+            <a href="/Zap" class="px-2"> Get Started </a><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="float-right w-6 h-6 relative text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+             </svg>
+		</div>
+	</nav>
+	
+	<!-- Content/ Landing Page -->
+	<div id="home-top-wrapper" class="bg-[#292220] ">
+		<h1 style="font-family:Nahony;" class="flex justify-center text-center text-5xl mt-40 px-5 pb-36 w-full lg:pb-36 md:text-4xl lg:text-7xl xl:text-9xl xl:justify-normal xl:text-start md:w-full  xl:w-7/12">CognetZap is the best way to electrify your ideas to life! </h1>
+		<div class="flex justify-center pt-8  xl:justify-normal px-16 ">
+			<p class="  text-center w-10/12 lg:mr-10 lg:w-7/12 md:text-2xl md:w-6/12 lg:hidden"> With CognetZap you can create, explore and learn about your creations while staying anonymous online</p>
+		</div>
+		<div id="img" class="absolute inset-0 flex justify-center items-center pl-[72rem] pt-[10rem] z-1 overflow-hidden">
+			<img class=" lg:mb-[12rem] z-0 shadow-lg shadow-white rounded-lg absolute rotate-[-9deg] hidden xl:block" src="https://cdn.leonardo.ai/users/507555bb-d3d6-4485-86eb-d5074ded6875/generations/e3d208a1-6dfe-4c1b-84c9-cb8688363761/variations/Default_Character_Sheet_complex_3d_render_ultra_detailed_of_a_0_e3d208a1-6dfe-4c1b-84c9-cb8688363761_1.jpg" width="350">
+			<div class=" z-0 absolute inset-0 flex justify-center items-center pl-[30rem] pb-[0rem] lg:pb-[3rem] xl:pb-[7rem]">
+				<img class="z-1 shadow-xl shadow-[#3A291D] rounded-lg rotate-[10deg] hidden overflow-hidden lg:hidden xl:block" src="https://cdn.leonardo.ai/users/57fc131c-e7d7-4957-bbfb-457b2d1ea33e/generations/e1c1c6cc-e9c0-4849-96f8-240758b4e62a/variations/Default_a_photorealistic_portrait_of_a_stunningly_beautiful_wo_0_e1c1c6cc-e9c0-4849-96f8-240758b4e62a_1.jpg?w=512" width="350">
+			</div>
+		</div>
+	</div>
+
+	<section style="font-family:Satoshi;" class="flex justify-center z-10 w-screen bg-[#CFC6BB] text-[#322D28] pt-10 mt-[16rem] lg:mt-[0rem] ">
+		<h1 class="absolute p-5 text-5xl "> Our Misson</h1>
+		<div class="flex absolute w-full justify-center">
+		<p class=" text-sm m-10 pb-[25rem] pt-10 md:text-lg lg:text-1xl lg:w-7/12 xl:w-1/2 xl:text-2xl"> CognetZap is not just another unblocker for schools. Our mission is to address the root causes of internet censorship and to work towards eliminating it one step at a time. We believe that everyone has the right to access information freely and without restriction, and we are committed to fighting for that right.<br><br>
+
+			We know that internet censorship is a complex issue, but we believe that it is one that can be solved. We are working with other organizations with the same motive to raise awareness of the issue and to develop solutions that will allow everyone to enjoy the benefits of a free and open internet. 
+		</p>
+		</div>
+		<h1 class="flex justify-center text-6xl absolute mt-[21rem] w-screen opacity-80 pt-5 lg:mt-[34rem] xl:mt-[26]"> Start Now!</h1>
+		<Card
+		body="Learn About me and my motives behind coding and making these free open-source services for everyone to use.",
+		title="About Me",
+		img="https://cdn.leonardo.ai/users/fa13c64e-5101-4b7e-9653-ffe4d5002d05/generations/c57d7aae-1332-47c1-8bba-1f0b15f1ab5d/DreamShaper_v5_13_a_black_kid_coding_on_his_pc_with_great_focu_3.jpg",
+		href="https://streamscribe.vercel.app"
+		/>
+
+		<Card
+		body="Our code is open-source, so anyone can contribute to our mission. Join us today and help us make the internet a more open and free place for everyone!",
+		title="Contribute",
+		img="https://cdn.leonardo.ai/users/ac9f6a4b-2901-4d0f-bf5a-2114d23a6fab/generations/911b84b3-766a-4686-8155-910c420dd58f/variations/Default_artwork_of_tshirt_graphic_design_flat_design_of_one_re_3_911b84b3-766a-4686-8155-910c420dd58f_1.jpg",
+		href="https://github.com/FlyNightSky"
+		/>
+
+		<Card
+		body="Make your wildest imaginations come to reality with the power of AI and cognetZap!",
+		title="Zap your ideas to life⚡",
+		img="https://cdn.leonardo.ai/users/ab0ec8a3-c208-42ee-9152-5a58cff9f0c8/generations/7a51da1e-94d3-4c7c-a8ed-89a89f9f5a9c/variations/Default_black_and_white_A_masked_samurai_warrior_standing_on_a_1_7a51da1e-94d3-4c7c-a8ed-89a89f9f5a9c_1.jpg?w=512",
+		href="Zap"
+		/>
+		
+	
+	</section>
+	<section class="flex justify-center absolute bg-[#292321] text-white z-20 h-full w-screen ">
+		<div class="text-2xl mx-10 w-full text-center pt-10 ">
+			<h1>Make your productivity lighting fast with cognetZap⚡</h1>
+		</div>
+		<div class="flex z-20 justify-start hidden h-1/2 w-full pl-16 absolute mt-36 xl:block">
+			<img class="rounded-lg rotate-[-6deg]" src="https://cdn.leonardo.ai/users/1005cede-4056-4d26-9586-c81c097af4b9/generations/7b39455c-25f1-4cd9-a08a-cbe68d5052a4/variations/Default_A_portrait_of_a_dog_wearing_sunglasses_and_maximalist_0_7b39455c-25f1-4cd9-a08a-cbe68d5052a4_1.jpg?w=512" width="312">
+		</div>
+		<div class="flex justify-start hidden h-1/2 w-full z-10 p-16 ml-[12rem] pt-16 absolute mt-[7rem] lg:ml-0 lg:block xl:block">
+			<img class="rounded-lg rotate-[19deg] lg:rotate-[10deg]" src="https://cdn.leonardo.ai/users/a254dc59-267b-4be2-9880-4eb4dadb9103/generations/a0ae2b47-5217-44dd-95a0-abe0f785d8ed/DreamShaper_v6_a_lonely_astronaut_surrounded_by_the_debris_of_1.jpg" width="320">
+		</div>
+
+		<div class="flex justify-center text-center absolute  text-2xl items-center h-full w-screen pr-10 ml-[0rem] xl:ml-[15rem]">
+			<h1 class="flex justify-center absolute hidden md:block xl:block lg:block md:w-8/12 xl:w-6/12">Elevate your creativity with CognetZap. Let your imagination run wild, free as a boar in the wild. CognetZap will help you unleash your full creative potential. Let your mind be free and electriy your ideas into reality. We're always looking for people to help us out on our journey to have fun and stay hidden online. If you're interested in contributing, please check out our GitHub page. We'd love to have you join our team!</h1>
+			<h1 class="flex justify-center absolute text-lg block px-5 mb-[19rem] md:hidden lg:hidden xl:hidden">Elevate your creativity with CognetZap. Let your imagination run wild, free as a boar in the wild. CognetZap will help you unleash your full creative potential. Let your mind be free and electriy your ideas into reality.Check out our GitHub page. We'd love to have you join our team!</h1>
+
+			<div id="get-started" class="z-20 flex justify-center w-screen absolute md:mt-[28rem] lg:mt-[18rem] xl:mt-[15rem]">
+				<div class="bg-none lg:mt-16 transition-all absolute text-white rounded-full border border-white p-2 hover:px-5">
+					<a href="https://github.com/FlyNightSky" class="px-2 "> Contribute </a><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="float-right w-6 h-6 relative text-white">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+					 </svg>
+				</div>
+		</div>
+		
+	</section> 
+	<footer class="flex justify-start items-center z-20 absolute w-full bg-[#CFC6BB] mt-[55rem] p-[6.5rem]">
+		<div class="flex justify-center items-center pr-[10rem] absolute w-full mb-32 text-[#292220]">
+			<a class="text-5xl">Cognet</a><a class="text-yellow-100 text-5xl">ZAP</a><a class="text-6xl">.</a>
+			<h1 class="flex justify-center absolute pt-32 pr-9">Created By ‎<a class="text-yellow-100">FlyNightSky</a></h1></a>
+		</div>
+	</footer>
+
+
+
+
+	</main>
+
+	<!--
+		//Centering a element
+
+		<div class="absolute inset-0 h-screen flex justify-center items-center">
+			<img src="https://picsum.photos/200/300?random=1">
+		</div>
+	 -->
+
+	 <script>
+		const menu = document.getElementById('menu-wrapper');
+		menu.style.display = "none";
+	 </script>
+
+	<script src="../main.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</Layout>
+
+
+<style>
+	
+	html,body{
+		font-family:DREAM;
+		/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background:rgb(24, 18, 15);
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(31, 26, 24); 
+}
+
+	}
+
+
+#fillerText{
+	font-family:FutHeavy;
+}
+
+#title{
+	font-family: Satoshi;
+}
+
+#get-started{
+	font-family: Satoshi;
+}
+
+#items{
+	font-family: Satoshi;
+}
+
+#blob {
+  fill: #463e3c;
+  animation: move 10s ease-in-out infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes move {
+  0%   { transform: scale(1)  }
+  38%  { transform: scale(0.8, 1) }
+  40%  { transform: scale(0.8, 1)  }
+  78%  { transform: scale(1.3) }
+  80%  { transform: scale(1.3) }
+  100% { transform: scale(1)   }
+}
+
+
+
+</style>

@@ -1,0 +1,58 @@
+---
+const { title } = Astro.props;
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/logo.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="select-none overflow-x-hidden">
+		<slot/>
+	</body>
+</html>
+
+<style>
+	@font-face {
+  font-family: "BLANK";
+  src:url("../fonts/BLANK.otf") format("opentype")
+}
+@font-face {
+  font-family: "DREAM";
+  src:url("../fonts/DreamscapeSans.ttf") format("truetype")
+}
+@font-face {
+  font-family: "Earth";
+  src:url("../fonts/earthorbiterbold.ttf") format("truetype")
+}
+@font-face {
+  font-family: "Futur";
+  src:url("../fonts/futur.ttf") format("truetype")
+}
+@font-face {
+  font-family: "FutBook";
+  src:url("../fonts/FuturaBook.ttf") format("truetype")
+}
+@font-face {
+  font-family: "FutHeavy";
+  src:url("../fonts/FuturaHeavy.ttf") format("truetype")
+}
+@font-face {
+  font-family: "Nahony";
+  src:url("../fonts/Nahony.ttf") 
+}
+@font-face {
+  font-family: "ses";
+  src:url("../fonts/ses.otf") 
+}
+@font-face {
+  font-family: "Bluzonir";
+  src:url("../fonts/Bluzonir.ttf") 
+}
+@font-face {
+  font-family: "Satoshi";
+  src:url("../fonts/Satoshi.otf") 
+}
+</style>
