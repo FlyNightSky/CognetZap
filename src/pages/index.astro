@@ -4,12 +4,11 @@ import Card from "../components/card.astro";
 import Loader from "../Layouts/loader.astro";
 ---
 
-<Loader/>
 <Layout title="CognetZap">
-
+	<Loader/>
 
 	<!-- Main Screen -->
-	<main id="main" class=" top-0 left-0 h-full w-full absolute bg-[#292220] text-[#e3ddd8] ">
+	<main id="main" class=" top-0 left-0 h-screen w-screen absolute bg-[#292220] text-[#e3ddd8] ">
 		<nav class="flex w-screen ">
 			<!-- Hamburger Menu -->
 			<div onclick="const menu = document.getElementById('menu-wrapper');menu.style.display='block';" class="flex block pr-4 mt-4 absolute w-screen z-20 justify-end lg:hidden xl:hidden">

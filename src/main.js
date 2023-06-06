@@ -1,7 +1,10 @@
 import { gsap } from "gsap";
 //loading
+const loaderWrap = document.getElementById('loaderWrapper');
+loaderWrap.style.display = "block";
+
 const mainScreen = document.getElementById('main');
-mainScreen.style.display = "none";
+mainScreen.style.display = "block";
 const menu = document.getElementById('menu-wrapper');
 menu.style.display = "none";
 
@@ -63,13 +66,14 @@ var counting = setInterval(function () {
 // Hide animation on load
 $(window).on("load",function(){
   const loaderForce = document.getElementById("percentage");
+  const loaderWrap = document.getElementById('loaderWrapper');
    console.log('Loaded')
    loaderForce.textContent = "100% " +' '+'Loaded!';
    gsap.to("#loaderWrapper", { 
    opacity:0,
   });
   mainScreen.style.display = "block";
-
+  loaderWrap.style.display = "none";
 });
 
   
